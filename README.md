@@ -48,9 +48,9 @@ Proyek ini menggunakan dataset **Telco Customer Churn** standar industri.
     * Alasan pemilihan: Memberikan nilai recall yang tinggi dan threshold optimization yang sangat sensitif untuk menghindari skenario FN.
 
 ### Metrik Evaluasi:
-* **Accuracy:** 92.78%
-* **F1-Score:** [MASUKKAN ANGKA]
-* **Recall (Churn Class):** 42.84%
+* **Accuracy:**  42.84%
+* **F1-Score:** 58.61%
+* **Recall (Churn Class):** 92.78%
 
 > *Catatan: Dalam kasus Churn, kami memprioritaskan Recall untuk meminimalkan False Negatives (gagal mendeteksi pelanggan yang akan pergi).*
 
