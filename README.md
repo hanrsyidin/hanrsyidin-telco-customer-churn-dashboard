@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔮 ChurnVision: Customer Retention Intelligence System
 
-## Getting Started
+![Project Status](https://img.shields.io/badge/Status-Production-emerald?style=for-the-badge)
+![Tech Stack](https://img.shields.io/badge/Stack-Next.js_|_FastAPI_|_Scikit--Learn-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
-First, run the development server:
+> **Live Demo:** [Klik di sini untuk mencoba aplikasi](https://hanrsyidin-telco-customer-churn-das.vercel.app/)  
+> **Backend API:** [Hugging Face Space](https://hanrsyidin-churn-api-farhan.hf.space/docs)
 
+## 📋 Overview
+
+**ChurnVision** adalah sistem analitik prediktif *end-to-end* yang dirancang untuk membantu bisnis telekomunikasi mengidentifikasi pelanggan yang berisiko berhenti berlangganan (*churn*) secara *real-time*.
+
+Berbeda dengan model ML statis yang hanya hidup di Jupyter Notebook, proyek ini menjembatani kesenjangan antara **Data Science** dan **Software Engineering**. Sistem ini menerima input demografis dan finansial pelanggan, memprosesnya melalui API Machine Learning, dan memberikan:
+1.  **Prediksi Status:** (Churn / Stay).
+2.  **Skor Probabilitas:** Seberapa besar kemungkinan pelanggan akan pergi.
+3.  **Rekomendasi Bisnis:** Strategi mitigasi yang disarankan secara otomatis.
+
+---
+
+## 🏗️ Architecture & Tech Stack
+
+Sistem ini dibangun dengan arsitektur *decoupled* untuk skalabilitas, memisahkan logika inferensi AI dari antarmuka pengguna.
+
+### 🧠 Backend (Machine Learning & API)
+* **Python & Scikit-Learn:** Pelatihan model, *preprocessing pipeline*, dan serialisasi model.
+* **FastAPI:** Framework modern untuk melayani model ML sebagai RESTful API yang cepat.
+* **Hugging Face Spaces:** Platform deployment untuk server inferensi (Dockerized).
+
+### 💻 Frontend (User Interface)
+* **Next.js 14 (App Router):** React framework untuk performa dan SEO.
+* **TypeScript:** Menjamin keamanan tipe data antara Frontend dan API response.
+* **Tailwind CSS:** Styling modern dengan pendekatan *Glassmorphism*.
+* **Fetch API:** Integrasi asinkronus ke backend Python.
+
+---
+
+## 📊 Model Performance & Methodology
+
+Proyek ini menggunakan dataset **Telco Customer Churn** standar industri.
+
+### Workflow Data Science:
+1.  **Exploratory Data Analysis (EDA):** Analisis korelasi fitur terhadap target churn.
+2.  **Preprocessing:** * Encoding variabel kategorikal (Gender, PaymentMethod, dll).
+    * Scaling fitur numerik (Tenure, MonthlyCharges).
+3.  **Model Selection:**
+    * Model yang digunakan: XGBoost.
+    * Alasan pemilihan: Memberikan nilai recall yang tinggi dan threshold optimization yang sangat sensitif untuk menghindari skenario FN.
+
+### Metrik Evaluasi:
+* **Accuracy:**  42.84%
+* **F1-Score:** 58.61%
+* **Recall (Churn Class):** 92.78%
+
+> *Catatan: Dalam kasus Churn, kami memprioritaskan Recall untuk meminimalkan False Negatives (gagal mendeteksi pelanggan yang akan pergi).*
+
+---
+
+## 📸 Screenshots
+
+### 1. Dashboard Utama (Glassmorphism UI)
+![Dashboard UI](./public/screenshot-ui.png)
+*(Tampilan antarmuka pengguna yang modern dan responsif)*
+
+### 2. Hasil Analisis Risiko
+![Prediction Result](./public/screenshot-result.png)
+*(Visualisasi hasil prediksi beserta probabilitas dan rekomendasi)*
+
+---
+
+## 🚀 Installation & Local Setup
+
+Jika Anda ingin menjalankan proyek ini secara lokal:
+
+### Prerequisites
+* Node.js (v18+)
+* Python (v3.9+)
+
+### 1. Clone Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/hanrsyidin/nama-repo-kamu.git](https://github.com/hanrsyidin/nama-repo-kamu.git)
+cd nama-repo-kamu
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Setup Frontend
+```bash
+# Install dependencies
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Buat file .env.local
+echo "NEXT_PUBLIC_API_URL=[https://hanrsyidin-churn-api-farhan.hf.space/predict](https://hanrsyidin-churn-api-farhan.hf.space/predict)" > .env.local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Jalankan server development
+npm run dev
 
-## Learn More
+Buka http://localhost:3000 di browser Anda.
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 👤 Author
+Ahmad Farhan Rasyidin
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Informatics Engineering Student @ Sriwijaya University
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Focus: AI, Data Science, & Fullstack Development
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Portfolio: hanrsyidin.info
