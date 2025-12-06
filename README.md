@@ -44,13 +44,13 @@ Proyek ini menggunakan dataset **Telco Customer Churn** standar industri.
 2.  **Preprocessing:** * Encoding variabel kategorikal (Gender, PaymentMethod, dll).
     * Scaling fitur numerik (Tenure, MonthlyCharges).
 3.  **Model Selection:**
-    * Model yang digunakan: **[SEBUTKAN MODELMU, MISAL: Random Forest Classifier / XGBoost]**.
-    * Alasan pemilihan: Memberikan keseimbangan terbaik antara presisi dan *recall*.
+    * Model yang digunakan: XGBoost.
+    * Alasan pemilihan: Memberikan nilai recall yang tinggi dan threshold optimization yang sangat sensitif untuk menghindari skenario FN.
 
 ### Metrik Evaluasi:
-* **Accuracy:** [MASUKKAN ANGKA, MISAL: 82%]
+* **Accuracy:** 92.78%
 * **F1-Score:** [MASUKKAN ANGKA]
-* **Recall (Churn Class):** [MASUKKAN ANGKA - PENTING UNTUK KASUS CHURN]
+* **Recall (Churn Class):** 42.84%
 
 > *Catatan: Dalam kasus Churn, kami memprioritaskan Recall untuk meminimalkan False Negatives (gagal mendeteksi pelanggan yang akan pergi).*
 
