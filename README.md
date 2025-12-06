@@ -4,7 +4,7 @@
 ![Tech Stack](https://img.shields.io/badge/Stack-Next.js_|_FastAPI_|_Scikit--Learn-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
-> **Live Demo:** [Klik di sini untuk mencoba aplikasi]([https://link-vercel-kamu-disini.vercel.app](https://hanrsyidin-telco-customer-churn-das.vercel.app/))  
+> **Live Demo:** [Klik di sini untuk mencoba aplikasi](https://link-vercel-kamu-disini.vercel.app](https://hanrsyidin-telco-customer-churn-das.vercel.app/))  
 > **Backend API:** [Hugging Face Space](https://hanrsyidin-churn-api-farhan.hf.space/docs)
 
 ## 📋 Overview
